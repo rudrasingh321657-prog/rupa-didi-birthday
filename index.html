@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Rupa Didi</title>
+
+<style>
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle, #5c4300, #120d00);
+  color: gold;
+  font-family: Georgia, serif;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 50px 15px;
+}
+
+h1 {
+  font-size: 38px;
+  color: gold;
+  text-shadow: 0 0 15px gold;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px gold; }
+  to { text-shadow: 0 0 25px gold; }
+}
+
+.crown {
+  font-size: 65px;
+  animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+  50% { transform: translateY(-15px); }
+}
+
+.cake {
+  font-size: 100px;
+  margin: 25px;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  50% { transform: translateY(-12px); }
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+button {
+  padding: 15px 28px;
+  border: 2px solid gold;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #b8860b, gold);
+  color: #241800;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#surprise {
+  display: none;
+  font-size: 24px;
+  margin-top: 25px;
+  animation: glow 1s infinite alternate;
+}
+
+.balloon {
+  position: fixed;
+  bottom: -100px;
+  font-size: 35px;
+  animation: rise 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rise {
+  to { transform: translateY(-120vh); }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="crown">👑</div>
+
+<h1>HAPPY BIRTHDAY</h1>
+
+<h1>RUPA DIDI ❤️</h1>
+
+<div class="cake">🎂</div>
+
+<p>
+Wishing You A Day Full Of Happiness! ✨
+<br>
+May Your Life Shine Like Gold! 🌟
+</p>
+
+<button onclick="showSurprise()">
+🎁 OPEN YOUR SURPRISE
+</button>
+
+<div id="surprise">
+💛 Happy Birthday Rupa Didi! 💛
+<br><br>
+May all your dreams come true.
+<br>
+Stay Happy, Stay Blessed! 👑
+<br><br>
+🌹 Lots of Love! 🌹
+</div>
+
+</div>
+
+<script>
+
+function showSurprise() {
+  document.getElementById("surprise").style.display = "block";
+
+  for(let i = 0; i < 35; i++) {
+    let balloon = document.createElement("div");
+    balloon.className = "balloon";
+    balloon.innerHTML = ["🎈","✨","💛","🎉"][Math.floor(Math.random()*4)];
+    balloon.style.left = Math.random()*100 + "vw";
+    balloon.style.animationDelay = Math.random()*3 + "s";
+    document.body.appendChild(balloon);
+
+    setTimeout(() => balloon.remove(), 8500);
+  }
+}
+
+</script>
+
+</body>
+</html>
